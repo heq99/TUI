@@ -4,7 +4,7 @@
 <html>
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="<c:url value="/resources/main.css" />">
+	<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css" />">
 	<script type="text/javascript">
 	function updatePrice() {
 		var prodForm = document.getElementById("cartItem");

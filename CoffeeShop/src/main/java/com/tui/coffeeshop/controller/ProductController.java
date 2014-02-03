@@ -142,6 +142,6 @@ public class ProductController {
 				totalPrice += cartItem.getPrice();
 			}
 		}
-		return "£" + totalPrice / 100.0;
+		return "&pound;" + totalPrice / 100.0;
 	}
 }
