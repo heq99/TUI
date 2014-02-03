@@ -1,0 +1,11 @@
+127.0.0.1 - - [02/Feb/2014:23:48:54 +0000] "GET / HTTP/1.1" 200 356 http-bio-8080-exec-1 1980
+127.0.0.1 - - [02/Feb/2014:23:48:54 +0000] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-8080-exec-2 9
+127.0.0.1 - - [02/Feb/2014:23:48:56 +0000] "GET /brand/1 HTTP/1.1" 200 2407 http-bio-8080-exec-3 521
+127.0.0.1 - - [02/Feb/2014:23:48:56 +0000] "GET /resources/mystyle.css HTTP/1.1" 404 949 http-bio-8080-exec-4 5
+127.0.0.1 - - [02/Feb/2014:23:48:56 +0000] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-8080-exec-5 8
+127.0.0.1 - - [02/Feb/2014:23:49:05 +0000] "GET /product/2 HTTP/1.1" 200 1973 http-bio-8080-exec-6 618
+127.0.0.1 - - [02/Feb/2014:23:49:05 +0000] "GET /resources/mystyle.css HTTP/1.1" 404 949 http-bio-8080-exec-7 5
+127.0.0.1 - - [02/Feb/2014:23:49:05 +0000] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-8080-exec-8 4
+127.0.0.1 - - [02/Feb/2014:23:49:07 +0000] "POST /product/update_price HTTP/1.1" 200 1188 http-bio-8080-exec-9 134
+127.0.0.1 - - [02/Feb/2014:23:49:08 +0000] "GET /resources/mystyle.css HTTP/1.1" 404 949 http-bio-8080-exec-10 5
+127.0.0.1 - - [02/Feb/2014:23:49:08 +0000] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-8080-exec-10 7
