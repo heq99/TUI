@@ -9,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.tui.coffeeshop.model.Cart;
 import com.tui.coffeeshop.model.ProductBrand;
 import com.tui.coffeeshop.service.ProductBrandService;
 
@@ -17,6 +19,7 @@ import com.tui.coffeeshop.service.ProductBrandService;
  * Handles requests for the application home page.
  */
 @Controller
+@SessionAttributes("cart")
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -30,6 +33,9 @@ public class HomeController {
 		
 		List<ProductBrand> brandList = productBrandService.getAllProductBrands();
 		model.addAttribute("brandList", brandList);
+		
+		Cart cart = new Cart();
+		model.addAttribute("cart", cart);
 		
 		return "home";
 	}

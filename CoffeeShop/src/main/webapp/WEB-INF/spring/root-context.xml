@@ -20,7 +20,7 @@
 		class="org.apache.commons.dbcp.BasicDataSource" 
         destroy-method="close" >
         <property name="driverClassName" value="org.h2.Driver" />
-        <property name="url" value="jdbc:h2:tcp://localhost//home/qhe/H2data/coffeeshop" />
+        <property name="url" value="jdbc:h2:tcp://localhost/C:/Users/qianhe/git/TUI/H2data/coffeeshop" />
         <property name="username" value="coffee" />
         <property name="password" value="password" />
     </bean>

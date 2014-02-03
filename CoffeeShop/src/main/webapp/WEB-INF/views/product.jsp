@@ -4,7 +4,7 @@
 <html>
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="<c:url value="/resources/mystyle.css" />">
+	<link rel="stylesheet" type="text/css" href="<c:url value="/resources/main.css" />">
 	<script type="text/javascript">
 	function updatePrice() {
 		var prodForm = document.getElementById("cartItem");
@@ -15,6 +15,9 @@
 		var prodForm = document.getElementById("cartItem");
 		prodForm.action = "/product/add_cart_item";
 		prodForm.submit();
+	}
+	function cancel() {
+		window.location.href="<c:url value="/brand/${product.productBrand.id}"/>";
 	}
 	</script>
 </head>
@@ -29,8 +32,8 @@
 
 <h2>Product Details</h2>
 
+<form:form commandName="cartItem" action="add_cart_item" method="post">
 <table>
-	<form:form commandName="cartItem" action="add_cart_item" method="post">
 	<tr>
 		<td>Product name:</td>
 		<td>${product.name}</td>
@@ -41,32 +44,31 @@
 	</tr>
 	<c:forEach items="${product.productAttributes}" var="prodAttr" varStatus="status">
 	<tr>
-		<td>${prodAttr.name}:</td>
+		<td><label for="attributes[${status.index}].id">${prodAttr.name}:</label></td>
 		<td>
 			<form:select path="attributes[${status.index}].id" multiple="false"  
 						 onchange="javascript:{updatePrice();}">
 				<option value="0">-- Please select --</option>
 				<form:options items="${prodAttr.productAttributeValues}" itemLabel="value" itemValue="id" />
 			</form:select> 
+			<form:errors path="attributes[${status.index}].id" cssClass="errorMsg"/>
 		</td>
 	</tr>
 	</c:forEach>
 	<tr>
-		<td>Quantity:</td>
+		<td>
+			<label for="quantity">Quantity:</label>
+		</td>
 		<td>
 			<form:input path="quantity" onkeyup="javascript:{updatePrice();}"/>
+			<form:errors path="quantity" cssClass="errorMsg"/>
 		</td>
 	</tr>
 	<tr>
 		<td>Price:</td>
 		<td>
-			<c:if test="${totalPrice!=null}">
-				${totalPrice}
-			</c:if>
-			<c:if test="${totalPrice==null}">
-				&nbsp;
-			</c:if>
-			
+			<form:hidden path="price"/>
+			<c:out value="£${cartItem.price / 100.0}" />
 		</td>
 	</tr>
 	<tr>
@@ -74,11 +76,12 @@
 			<input type="button" value="Buy" onclick="javascript:{submitForm();}"/>
 		</td>
 		<td>
-			<input type="button" value="Back" onclick="javascript:{backToProdList();}"/>
+			<input type="button" value="Back" 
+				onclick="javascript:{cancel();}"/>
 		</td>
 	</tr>
-	</form:form>
 </table>
+</form:form>
 
 </body>
 </html>

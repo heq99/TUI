@@ -13,7 +13,9 @@ public class CartItem implements ModelObject {
 	private List<ProductAttributeValue> attributes;
 	
 	private Integer quantity;
-
+	
+	private Integer price;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -52,5 +54,13 @@ public class CartItem implements ModelObject {
 
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
+	}
+	
+	public Integer getPrice() {
+		return this.price;
+	}
+	
+	public void setPrice(Integer price) {
+		this.price = price;
 	}
 }
